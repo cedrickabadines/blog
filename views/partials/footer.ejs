@@ -1,0 +1,24 @@
+
+<!-- Include jQuery from CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="index.js" defer> </script>
+<script>
+  // Example of using jQuery in EJS
+  $(document).ready(function () {
+      // jQuery code here
+    
+  });
+  
+</script>
+
+<script>
+  let red = '<%= locals.redirect %>';
+
+  if (red) {
+    setTimeout(function() {
+          window.location.href = '/';
+        }, 50); // Redirect after 2000 milliseconds (2 seconds)
+  }
+      </script>
+</body>
+</html>

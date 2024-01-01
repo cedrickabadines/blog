@@ -1,0 +1,67 @@
+<%- include ("./partials/header.ejs") %>
+
+    <% if (locals.post.length) { %>
+      <% post.forEach((element, i) => { %>
+        <a href="/update?index=<%= i %>">
+          <div class="container">
+            <div id="main">
+                <span class="index"><%= i %> </span>
+                <span><%=element.name%></span>
+                <span><%=element.description%></span>
+            </div>
+        </a>
+      </div>
+
+      <% }); %>
+
+        
+        <% } else {%>
+          <div class="emptyContainer">
+            <div class="emptyMain">
+                Wow, such empty...
+            </div>
+       </div>
+        <% } %>
+
+        <% if (locals.postButton) { %>
+          <div class="container-modal">
+            <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSheet">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content rounded-4 shadow">
+                  <div class="modal-header border-bottom-0">
+                    <h1 class="modal-title fs-5">Post</h1>
+                      <form method="GET" action="/">
+                        <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </form>                                  
+                  </div>
+                  <div class="modal-body py-0">
+                    <form method="POST" action="/save">
+                      <div class="mb-3">
+                        <input type="text" value="<%= locals.idx %>" class="index" name="index">
+                        <label for="exampleFormControlInput1" class="form-label">Post Name</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="theName" value="<%= locals.name %>" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" resize="none"><%= locals.description %></textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+          
+                      <button type="submit" class="btn btn-lg btn-primary"> <%= locals.saveOrUpdate %> </button>
+                      <% if (locals.saveOrUpdate === "Update") { %>
+                        
+                          <button type="button" class="btn btn-lg btn-secondary deleteBtn" data-bs-dismiss="modal">
+                            <a href="/delete?i=<%= locals.idx %>">Delete</a>
+                          </button>             
+                      <% } %>
+                      
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+
+<%- include ("./partials/footer.ejs") %>

@@ -1,0 +1,73 @@
+body {
+    background-color: indigo;
+    color: #FFC107;
+}
+
+#main {
+    margin: 3rem;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: #212529;
+    border-radius: 10%;
+}
+
+.emptyContainer {
+    margin: 0 5rem 0 5rem;
+    height: 100%;
+   
+}
+
+.emptyMain {
+    text-align: center;
+    background-image: url("/images/empty.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 85%;
+    border-radius: 5%;
+    line-height: 500px;
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+}
+
+.modalSheet {
+    background-color: indigo;
+}
+
+.container-modal {
+    position: fixed;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    word-wrap:break-word;
+    text-wrap:unrestricted;
+
+}
+
+textarea {
+    resize: none;
+}
+
+span {
+    display: block;
+    /* border-style: dashed; */
+}
+
+a {
+    text-decoration: none;
+}
+
+.index {
+    display: none;
+}
+
+.deleteBtn a {
+    color: #212529;
+}
